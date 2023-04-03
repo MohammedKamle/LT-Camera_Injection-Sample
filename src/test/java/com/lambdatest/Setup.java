@@ -20,14 +20,14 @@ public class Setup {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("isRealMobile", true);
         //AppURL (Create from Wikipedia.apk sample in project)
-        capabilities.setCapability("app", "camera-inkection"); //Enter your app url
+        capabilities.setCapability("app", "YOUR_APP_URL"); //Enter your app url
         capabilities.setCapability("deviceOrientation", "PORTRAIT");
         capabilities.setCapability("console", true);
         capabilities.setCapability("network", true);
         capabilities.setCapability("visual", true);
         capabilities.setCapability("devicelog", true);
         capabilities.setCapability("enableImageInjection",true);
-        capabilities.setCapability("media","lt://MEDIAd508b730c7f84895aac014d584de0a07");
+        capabilities.setCapability("media","YOUR_MEDIA_URL"); // eg: lt://MEDIAd508b730c7f84895aac014d584de0a07
 
         String username = System.getenv("LT_USERNAME");
         String accessKey = System.getenv("LT_ACCESS_KEY");
