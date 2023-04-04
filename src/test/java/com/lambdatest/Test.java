@@ -1,21 +1,26 @@
 package com.lambdatest;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test extends Setup{
     @org.testng.annotations.Test
     public void cameraInjectionTest() throws InterruptedException {
-        AndroidElement el1 = (AndroidElement) driver.findElementById("com.android.permissioncontroller:id/permission_allow_button");
-        el1.click();
-        Thread.sleep(2000);
-        AndroidElement el2 = (AndroidElement) driver.findElementById("com.bsstag.cameraimage:id/button");
-        el2.click();
-        Thread.sleep(2000);
-        AndroidElement el4 = (AndroidElement) driver.findElementByAccessibilityId("Take photo");
-        el4.click();
-        Thread.sleep(2000);
-        AndroidElement el5 = (AndroidElement) driver.findElementById("com.google.android.GoogleCamera:id/shutter_button");
-        el5.click();
-        Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        MobileElement element1 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.android.permissioncontroller:id/permission_allow_button")));
+        element1.click();
+
+        MobileElement element2 = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.bsstag.cameraimage:id/button")));
+        element2.click();
+
+        MobileElement element4 = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.GoogleCamera:id/shutter_button")));
+        element4.click();
+
+        MobileElement element5 = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.GoogleCamera:id/shutter_button")));
+        element5.click();
     }
 }
