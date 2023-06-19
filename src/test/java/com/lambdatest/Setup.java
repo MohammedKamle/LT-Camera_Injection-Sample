@@ -59,7 +59,7 @@ public class Setup {
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
                 .addFormDataPart("media_file","IMG_2020.jpg",
                         RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File("/Users/mohammadk/Downloads/IMG_2024.PNG")))
+                                new File("/path/to/image/sample.png")))
                 .addFormDataPart("type","image")
                 .addFormDataPart("custom_id","my-photo")
                 .build();
