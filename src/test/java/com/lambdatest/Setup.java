@@ -57,9 +57,9 @@ public class Setup {
         MediaType mediaType = MediaType.parse("text/plain");
 
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("media_file","IMG_2020.jpg",
+                .addFormDataPart("media_file","qr1678617828755.jpg",
                         RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File("/path/to/image/sample.png")))
+                                new File("/Users/mohammadk/Downloads/qr1678617828755.png")))
                 .addFormDataPart("type","image")
                 .addFormDataPart("custom_id","my-photo")
                 .build();
