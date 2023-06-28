@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
+
 import java.net.URL;
 
 public class Setup {
@@ -22,8 +22,8 @@ public class Setup {
         mediaUrl = uploadImageAndGetUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("build", "debug");
-        //capabilities.setCapability("name", "Android_Camera_injection_test");
+        //capabilities.setCapability("build", "debug");
+        capabilities.setCapability("name", "Android_Camera_injection_test");
         capabilities.setCapability("deviceName", "Pixel.*");
         //capabilities.setCapability("platformVersion", "11");
         capabilities.setCapability("platformName", "Android");
